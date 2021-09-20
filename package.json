@@ -1,0 +1,28 @@
+{
+  "name": "gamification-engine",
+  "version": "1.0.0",
+  "description": "Snippet of the algorithm used into the \"gamification Platform for the enrichment of Senso Comune\" - my Master's Degree thesis.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michele-paparella/gamification-engine.git"
+  },
+  "keywords": [
+    "node",
+    "gamification",
+    "player",
+    "game"
+  ],
+  "author": "Michele Paparella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michele-paparella/gamification-engine/issues"
+  },
+  "homepage": "https://github.com/michele-paparella/gamification-engine#readme",
+  "devDependencies": {
+    "@types/node": "^16.9.4"
+  }
+}
