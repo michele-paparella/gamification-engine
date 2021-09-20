@@ -1,7 +1,12 @@
 
-export class Player {
-    name: String;
-    score: Number;
-    reliability: Number;
+class Player {
+    name;
+    reliability;
 
+    constructor(name) {
+        this.name = name;
+        this.reliability = 0.0;
+    }
 }
+
+module.exports = { Player }

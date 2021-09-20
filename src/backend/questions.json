@@ -1,0 +1,82 @@
+{
+    "questions": [
+        {
+            "description": "Nel {calcio}, attaccare è il miglior modo per difendere la propria porta.",
+            "choices": [
+                "(chimica|it|elemento chimico) elemento chimico solido di colore bianco argenteo, facente parte del gruppo dei metalli alcalino terrosi, avente numero atomico 20, peso atomico 40,08 e simbolo chimico Ca che è utilizzato come disossidante",
+                "Il calcio è necessario per rafforzare e preservare ossa e denti",
+                "(sport)(calcio) sport praticato da due squadre di 11 giocatori ciascuna, su un campo rettangolare, che consiste nel fare entrare una palla nella porta della squadra avversaria, usando tutte le parti del corpo escluse braccia e mani, ed impedirne l'entrata nella propria"
+            ],
+            "goldAnnotation": 3
+        },
+        {
+            "description": "Un politico è un uomo che spesso viene identificato con un {partito} politico i cui ideali porta avanti con fervore.",
+            "choices": [
+                "partito agg. [part. pass. di partire, nel suo sign. trans.]. – Diviso: coi capelli p. sulla fronte (più com. spartiti); fin che l’Italia fu serva e p. (Carducci), divisa in tanti piccoli stati, non unita",
+                "partito s. m. [der. di partire «dividere»; propr. «ciò che è diviso, parte»]. – Nel linguaggio polit., associazione volontaria di un numero più o meno grande di cittadini, con una propria struttura organizzativa, costituita sulla base di una comune ideologia politico-sociale, e avente come obiettivo la realizzazione di un determinato programma, attraverso la partecipazione alla direzione del potere o attraverso la pressione e l’influenza nel governo e nello stato: p. democratico, moderato, conservatore, radicale, p. monarchico, repubblicano, denominazioni che possono costituire una connotazione generica, oppure indicare precisi gruppi politici in singoli Paesi, così come p. comunista, democristiano, socialista, ecc. (per p. d’azione, v. azione1, n. 1 a)"
+            ],
+            "goldAnnotation": 2
+        },
+        {
+            "description": "Ti avviso che stasera torno a {casa} tardi dal lavoro.",
+            "choices": [
+                "(edilizia)(ingegneria)(architettura) edificio costruito per essere utilizzato come abitazione. Può essere a uno o più piani, suddivisi in vani distinti, ognuno per un uso specifico",
+                "(senso figurato) (industriale) casa costruttrice"
+            ],
+            "goldAnnotation": 1
+        },
+        {
+            "description": "Un {plastico} è un modello in scala che riproduce elementi architettonici.",
+            "choices": [
+                "ogni cosa o persona ritenuta esemplare",
+                "(per estensione) riferimento per eseguire",
+                "(architettura)(tecnologia)(ingegneria) riproduzione in scala ridotta di un oggetto o di una struttura"
+            ],
+            "goldAnnotation": 3
+        },
+        {
+            "description": "Quando sei nello {spazio} puoi apprezzare quanto piccola e fragile sia la Terra.",
+            "choices": [
+                "(matematica)(geografia)(geometria)(fisica) estensione di un luogo, vuoto o occupato da corpi",
+                "(astronomia) parte dell'universo oltre l'atmosfera terrestre"
+            ],
+            "goldAnnotation": 2
+        },
+        {
+            "description": "La fiducia cieca nei mercati ci ha {portato} ad una crisi economica mondiale.",
+            "choices": [
+                "reggere un oggetto, spostandolo in altro luogo",
+                "(senso figurato) causare, avere come conseguenza, comportare, determinare, indurre"
+            ]
+        },
+        {
+            "description": "L'Italia è una Repubblica democratica, fondata sul {lavoro}.",
+            "choices": [
+                "(fisica)(meccanica) prodotto scalare tra forza e spostamento",
+                "(diritto) (economia) (sociologia) (politica) attività sistematica finalizzata alla produzione di beni e servizi, esplicata in cambio di un compenso e regolata dalla legge"
+            ]
+        },
+        {
+            "description": "Il re scagliò la {lancia}.",
+            "choices": [
+                "(marina) piccola imbarcazione a remi usata come mezzo di servizio per navi militari e mercantili.",
+                "(armi) arma che veniva usata nel passato, composta da un manico, solitamente in legno, lungo da 1 a 6 metri e da una punta di pietra o di vari metalli"
+            ]
+        },
+        {
+            "description": "La Gioconda, nota anche come Monna Lisa, è un {quadro} a olio risalente al 1503.",
+            "choices": [
+                "(arte)(pittura) dipinto su tavola o su tela di varia forma, , generalmente quadrangolare, racchiuso da una cornice: la Gioconda è il quadro più famoso di Leonardo da Vinci",
+                "(medicina) quadro clinico, descrizione della condizione di un paziente"
+            ]
+        },
+        {
+            "description": "L'aspettativa di {vita} di un gatto domestico è di circa dodici anni, ma può arrivare fino ai quindici o addirittura ai venti.",
+            "choices": [
+                "(senso figurato) periodo di tempo molto lungo",
+                "(filosofia)(diritto) lo stato che fa seguito alla nascita e che precede la morte",
+                "(biologia)(medicina) insieme di condizioni che permettono ad un organismo naturale di trasformare energia, di muoversi e di comunicare"
+            ]
+        }
+    ]
+}
