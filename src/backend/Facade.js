@@ -21,7 +21,7 @@ class Facade {
             fs.readFile(path.join(__dirname, 'questions.json'), (err, data) => {
                 if (err) throw err;
                 var questionsFromFile = JSON.parse(data).questions;
-                for (var question of questionsFromFile){
+                for (var question of questionsFromFile) {
                     this.questions.push(new Question(question.description, question.choices, question.goldAnnotation));
                 }
                 resolve(self.getNextQuestions());

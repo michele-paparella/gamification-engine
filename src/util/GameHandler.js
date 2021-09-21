@@ -4,6 +4,8 @@ const { Game } = require("../model/game");
 const chalk = require('chalk');
 const { prompt } = require('enquirer');
 var _ = require('underscore');
+var config = require('../config');
+
 
 class GameHandler {
     facade;
@@ -21,7 +23,7 @@ class GameHandler {
             name: 'name',
             message: chalk.green('Enter player name: '),
             validate(value, state, item, index) {
-                if (_.isUndefined(value) || value.trim().length === 0){
+                if (_.isUndefined(value) || value.trim().length === 0) {
                     return "Please insert a name";
                 } else {
                     return true;
@@ -32,7 +34,7 @@ class GameHandler {
         player = new Player(response.name);
         console.log(chalk.blue('Loading...'));
         self.facade.loadQuestions().then(
-            questions => {
+            async questions => {
                 console.log(chalk.blue('Questions successfully loaded.'));
                 var game = new Game(player, questions);
                 game.startNewGame();

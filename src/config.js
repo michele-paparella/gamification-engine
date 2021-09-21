@@ -1,7 +1,7 @@
 
 var config = {};
 config.enableCache = false; //TODO add description
-config.questionsSize = 3; //TODO add description
-config.reliabilityThreshold = 0.8; //TODO add description
-config.debug = true;
+config.questionsSize = 5; //TODO add description
+config.reliabilityThreshold = 0.1; //TODO add description
+config.debug = false;
 module.exports = config;

@@ -35,7 +35,7 @@ class Game {
             i++;
         }
         const response = await prompt(formattedQuestions);
-        console.log(chalk.green("Game ended."));
+        console.log(chalk.blue("Game ended."));
         var currentQuestion = 0;
         for (var question of this.questions) {
             question.answer = parseInt(response[currentQuestion + 1]);

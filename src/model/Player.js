@@ -1,23 +1,32 @@
 var config = require('../config');
+const chalk = require('chalk');
 
 class Player {
     name;
-    reliability;
+    correctQuestions;
+    wrongQuestions;
 
     constructor(name) {
         this.name = name;
-        this.reliability = 0.0;
+        this.correctQuestions = 0;
+        this.wrongQuestions = 0;
     }
 
-    updateReliability(correctQuestions, wrongQuestions){
-        if (config.debug){
+    updateReliability(correctQuestions, wrongQuestions) {
+        if (config.debug) {
             console.debug('correctQuestions: %d, wrongQuestions: %d', correctQuestions, wrongQuestions);
         }
-        this.reliability = correctQuestions / (correctQuestions + wrongQuestions);
+        this.correctQuestions += correctQuestions;
+        this.wrongQuestions += wrongQuestions;
     }
 
     print() {
-        console.log('Player %s has a reliability score of %f', this.name, this.reliability.toFixed(2));
+        var reliability = this.correctQuestions / (this.correctQuestions + this.wrongQuestions);
+        if (reliability > config.reliabilityThreshold){
+            console.log(chalk.green.bold('Player %s has a reliability score of %f, so next time no golden questions will be added.'), this.name, reliability.toFixed(2));
+        } else {
+            console.log(chalk.red.bold('Player %s has a reliability score of %f, so next time more golden questions will be added.'), this.name, reliability.toFixed(2));
+        }
     }
 }
 
