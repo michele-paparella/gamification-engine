@@ -1,5 +1,6 @@
 const chalk = require('chalk');
 var _ = require('underscore');
+var config = require('../config');
 
 class Question {
     description;
@@ -19,6 +20,9 @@ class Question {
 
     checkResult() {
         if (this.goldAnnotation){
+            if (config){
+                console.debug('for question %s the correct answer is %d while the player choose %d', this.description, this.goldAnnotation, this.answer);
+            }
             this.result = this.goldAnnotation === this.answer ? Question.CORRECT : Question.WRONG;
         }
     }

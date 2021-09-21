@@ -35,11 +35,10 @@ class Game {
             i++;
         }
         const response = await prompt(formattedQuestions);
-        console.log(response);
         console.log(chalk.green("Game ended."));
         var currentQuestion = 0;
         for (var question of this.questions) {
-            question.answer = response[currentQuestion + 1];
+            question.answer = parseInt(response[currentQuestion + 1]);
             question.checkResult();
             if (question.result === Question.CORRECT) {
                 correctQuestions++;
