@@ -1,4 +1,5 @@
 const chalk = require('chalk');
+var _ = require('underscore');
 
 class Question {
     description;
@@ -19,16 +20,6 @@ class Question {
     checkResult() {
         if (this.goldAnnotation){
             this.result = this.goldAnnotation === this.answer ? Question.CORRECT : Question.WRONG;
-        }
-    }
-
-    print() {
-        //console.log(chalk`There are {underline 5280 feet} in a mile.`);
-        console.log(chalk`${this.description}`);
-        var i = 1;
-        for (var choice of this.choices){
-            console.log(chalk.cyan("%d - %s"), i , choice);
-            i++;
         }
     }
     

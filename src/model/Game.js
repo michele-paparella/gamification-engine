@@ -1,11 +1,9 @@
 const { Question } = require("./Question");
 
-var readline = require('readline');
-var rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-    terminal: false
-});
+const { prompt } = require('enquirer');
+var _ = require('underscore');
+const chalk = require('chalk');
+
 
 class Game {
     player;
@@ -16,25 +14,42 @@ class Game {
         this.questions = questions;
     }
 
-    startNewGame() {
+    async startNewGame() {
         var correctQuestions = 0;
         var wrongQuestions = 0;
-        for (var question of this.questions) {
-            question.print();
-            console.log("Please enter your answer: ");
-            rl.on('line', function (line) {
-                //TODO validate input
-                question.answer = line;
-                question.checkResult();
-                if (question.result === Question.CORRECT) {
-                    correctQuestions++;
-                } else if (question.result === Question.WRONG) {
-                    wrongQuestions++;
-                }
+        var i = 1;
+        var self = this;
+        var formattedQuestions = [];
+        for (question of this.questions) {
+            var currentChoice = 0;
+            formattedQuestions.push({
+                type: 'select',
+                name: i.toString(),
+                message: question.description,
+                choices:
+                    _.map(question.choices, function (choice) {
+                        currentChoice++;
+                        return { name: currentChoice.toString(), message: choice, value: '#ff0000' };
+                    })
             });
+            i++;
         }
-        this.player.reliability = correctQuestions / (correctQuestions + wrongQuestions);
-
+        const response = await prompt(formattedQuestions);
+        console.log(response);
+        console.log(chalk.green("Game ended."));
+        var currentQuestion = 0;
+        for (var question of this.questions) {
+            question.answer = response[currentQuestion + 1];
+            question.checkResult();
+            if (question.result === Question.CORRECT) {
+                correctQuestions++;
+            } else if (question.result === Question.WRONG) {
+                wrongQuestions++;
+            }
+            currentQuestion++;
+        }
+        self.player.updateReliability(correctQuestions, wrongQuestions);
+        self.player.print();
     }
 
 }

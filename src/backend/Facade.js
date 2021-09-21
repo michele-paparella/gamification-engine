@@ -1,6 +1,8 @@
 const fs = require('fs');
 var path = require('path');
 const { Question } = require("../model/question");
+var _ = require('underscore');
+var config = require('../config');
 
 
 class Facade {
@@ -31,7 +33,7 @@ class Facade {
 
     getNextQuestions() {
         //TODO use shuffle
-        return [this.questions[0]];
+        return _.sample(this.questions, config.questionsSize);
     }
 
 }

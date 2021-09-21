@@ -2,12 +2,8 @@ const { Player } = require("../model/Player");
 const { Facade } = require("../backend/Facade");
 const { Game } = require("../model/game");
 const chalk = require('chalk');
-var readline = require('readline');
-var rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-    terminal: false
-});
+const { prompt } = require('enquirer');
+var _ = require('underscore');
 
 class GameHandler {
     facade;
@@ -16,23 +12,32 @@ class GameHandler {
         this.facade = new Facade();
     }
 
-    startNewGame() {
+    async startNewGame() {
         console.log(chalk.blue('Stating new game...'));
-        console.log(chalk.green('Enter player name:'));
         var player;
         var self = this;
-        rl.on('line', function (name) {
-            //TODO validate input
-            player = new Player(name);
-            console.log(chalk.blue('Loading...'));
-            self.facade.loadQuestions().then(
-                questions => {
-                    console.log(chalk.blue('Questions successfully loaded.'));
-                    var game = new Game(player, questions);
-                    game.startNewGame();
+        const response = await prompt({
+            type: 'input',
+            name: 'name',
+            message: chalk.green('Enter player name: '),
+            validate(value, state, item, index) {
+                if (_.isUndefined(value) || value.trim().length === 0){
+                    return "Please insert a name";
+                } else {
+                    return true;
                 }
-            );
+            }
         });
+        //TODO validate input
+        player = new Player(response.name);
+        console.log(chalk.blue('Loading...'));
+        self.facade.loadQuestions().then(
+            questions => {
+                console.log(chalk.blue('Questions successfully loaded.'));
+                var game = new Game(player, questions);
+                game.startNewGame();
+            }
+        );
     }
 
 }
