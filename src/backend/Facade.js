@@ -20,11 +20,18 @@ class Facade {
         const promise = new Promise((resolve, reject) => {
             fs.readFile(path.join(__dirname, 'questions.json'), (err, data) => {
                 if (err) throw err;
-                var questionsFromFile = JSON.parse(data).questions;
-                for (var question of questionsFromFile) {
-                    this.questions.push(new Question(question.description, question.choices, question.goldAnnotation));
+                var timeout = 0;
+                if (!config.enableEagerLoading) {
+                    //simulating lazy load
+                    timeout = 3000;
                 }
-                resolve(self.getNextQuestions());
+                setTimeout(function () {
+                    var questionsFromFile = JSON.parse(data).questions;
+                    for (var question of questionsFromFile) {
+                        self.questions.push(new Question(question.description, question.choices, question.goldAnnotation));
+                    }
+                    resolve(self.getNextQuestions());
+                }, timeout);
             });
         });
         return promise;
