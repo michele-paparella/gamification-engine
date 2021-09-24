@@ -39,7 +39,7 @@ class Facade {
     }
 
     getNextQuestions() {
-        return _.last(_.shuffle(this.questions), config.questionsSize);
+        return _.sample(_.unique(this.questions), config.questionsSize);
     }
 
 }
