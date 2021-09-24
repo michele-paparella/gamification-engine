@@ -14,6 +14,12 @@ class Game {
         this.questions = questions;
     }
 
+    /**
+     * it starts a new game
+     * for each question we collect the player's answer in order to update his reliability.
+     * See method updateReliability of the Player class for more details.
+     * 
+     */
     async startNewGame() {
         var correctQuestions = 0;
         var wrongQuestions = 0;

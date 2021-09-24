@@ -14,6 +14,10 @@ class GameHandler {
         this.facade = new Facade();
     }
 
+    /**
+     * it starts a new Game
+     * this method takes the player's name and starts a new game by loading Questions with the help of the Facade class
+     */
     async startNewGame() {
         console.log(chalk.blue('Stating new game...'));
         var player;
@@ -30,7 +34,6 @@ class GameHandler {
                 }
             }
         });
-        //TODO validate input
         player = new Player(response.name);
         console.log(chalk.blue('Loading...'));
         self.facade.loadQuestions().then(
